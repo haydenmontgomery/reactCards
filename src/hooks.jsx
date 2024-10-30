@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const useFlip = () => {
@@ -17,7 +17,7 @@ const useAxios = (url) => {
   const dataObject = async (formatter = data => data, restOfUrl = "") => {
     const res = await axios.get(`${url}${restOfUrl}`)
     setDataList(data => [...data, formatter(res.data)]);
-  }
+  };
 
   return [dataList, dataObject]
 }
